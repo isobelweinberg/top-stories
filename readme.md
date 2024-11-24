@@ -1,0 +1,1 @@
+Repository to practice continuous integration, using code which scrapes 5 headlines from the BBC news website.

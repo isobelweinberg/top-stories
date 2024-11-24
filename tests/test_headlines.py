@@ -1,9 +1,15 @@
 import unittest
 from src.scrape import get_headlines
+from unittest.mock import patch
 
 class TestHeadlines(unittest.TestCase):
-    def test_headlines_list(self):
+    @patch("src.scrape.load_html")
+    def test_headlines_list(self, mock_load_html):
+        
+        with open("tests/bbc_homepage.html", "r", encoding="utf-8") as file:
+            mock_html = file.read()
 
+        mock_load_html.return_value = mock_html
         headlines = get_headlines()
                 
         # Check that headlines is a list

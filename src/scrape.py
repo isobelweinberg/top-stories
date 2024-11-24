@@ -5,7 +5,7 @@ from bs4 import BeautifulSoup
 
 def load_html(url: str) -> str:
     with urllib.request.urlopen(url) as reponse:
-        html = reponse.read()
+        html = reponse.read().decode('utf-8')
     
     return html
 
